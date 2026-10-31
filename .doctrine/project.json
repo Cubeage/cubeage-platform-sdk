@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "project": {
-    "repo": "Cubeage/cubeage-game-sdk",
+    "repo": "Cubeage/cubeage-platform-sdk",
     "name": "Cubeage Game SDK",
     "lifecycle": "active",
     "layer": "integration",
@@ -126,13 +126,13 @@
       {
         "id": "ci-adoption",
         "description": "Repository has no CI workflow for SDK package validation.",
-        "owner": "Cubeage/cubeage-game-sdk",
+        "owner": "Cubeage/cubeage-platform-sdk",
         "target": "Future CI adoption issue"
       },
       {
         "id": "package-release-control-plane",
         "description": "Unity package metadata is versioned in source, but no bot-owned package release or registry/provenance workflow is configured.",
-        "owner": "Cubeage/cubeage-game-sdk",
+        "owner": "Cubeage/cubeage-platform-sdk",
         "target": "Future package release control-plane issue"
       }
     ]

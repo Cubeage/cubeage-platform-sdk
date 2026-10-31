@@ -9,6 +9,6 @@
     "url": "https://cubeage.com"
   },
   "keywords": ["cubeage", "platform", "sdk", "analytics"],
-  "changelogUrl": "https://github.com/Cubeage/cubeage-game-sdk/blob/main/CHANGELOG.md",
-  "documentationUrl": "https://github.com/Cubeage/cubeage-game-sdk"
+  "changelogUrl": "https://github.com/Cubeage/cubeage-platform-sdk/blob/main/CHANGELOG.md",
+  "documentationUrl": "https://github.com/Cubeage/cubeage-platform-sdk"
 }
