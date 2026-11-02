@@ -1,0 +1,27 @@
+{
+  "unity": {
+    "version": "2022.3.0f1",
+    "url": "https://download.unity3d.com/download_unity/fb119bb0b476/LinuxEditorInstaller/Unity-2022.3.0f1.tar.xz",
+    "sha256": "f997d15e293d4f6fcd3064666b49694a2a91cc42eef321a306c44dfd6d7012da"
+  },
+  "lua": {
+    "version": "5.1.5",
+    "url": "https://www.lua.org/ftp/lua-5.1.5.tar.gz",
+    "sha256": "2640fc56a795f29d28ef15e13c34a47e223960b0240e8cb0a82d9b0738695333"
+  },
+  "cocos-types": {
+    "version": "2.4.4 (official benchmark project)",
+    "url": "https://raw.githubusercontent.com/cocos/cocos-benchmark-legacy/6670fdc873e994b0a7449d836374a87d15d545f3/creator.d.ts",
+    "sha256": "44df89c63c9c352cb3830928a5fafd08833c1ae903a7492ff195a4a7ec7c06f8"
+  },
+  "solar2d-json": {
+    "version": "22368dfc12090d3f61235050c7ff62a28ad6073e",
+    "url": "https://raw.githubusercontent.com/coronalabs/corona/22368dfc12090d3f61235050c7ff62a28ad6073e/platform/resources/json.lua",
+    "sha256": "697f1057740cbd0d6dd8f59eb7f7c0b182bdd4c0c2dd775b07ff87fb5acf2ab5"
+  },
+  "solar2d-dkjson": {
+    "version": "22368dfc12090d3f61235050c7ff62a28ad6073e",
+    "url": "https://raw.githubusercontent.com/coronalabs/corona/22368dfc12090d3f61235050c7ff62a28ad6073e/platform/resources/dkjson.lua",
+    "sha256": "16869c832cc7404742e0f9b64302cd95b79068a73bc51cce7f9f221de8633a78"
+  }
+}

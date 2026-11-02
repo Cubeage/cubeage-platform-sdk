@@ -114,21 +114,15 @@
     }
   },
   "delivery": {
-    "ciModel": "none",
+    "ciModel": "github-actions",
     "requiredContexts": [],
-    "deployPath": "Source SDK changes land on main; no CI workflow, registry publication workflow, or GitHub Release workflow is configured in this repository.",
-    "productionProof": "Runtime SDK changes require source readback plus host-game or engine-level integration smoke proof before production use. Manifest-only changes are proven by doctrine project-control audit.",
+    "deployPath": "Source SDK changes land on main through the merge queue; SDK checks compile/test source packages on pull_request, merge_group and push to main. No registry publication or GitHub Release workflow is configured.",
+    "productionProof": "Source compilation, packaged-consumer tests and local package inventory checks run in SDK checks; runtime changes additionally require host-game or engine-level integration smoke proof before production use. See docs/sdk-validation.md.",
     "recoveryClass": "source-revertable"
   },
   "adoption": {
     "status": "baseline",
     "gaps": [
-      {
-        "id": "ci-adoption",
-        "description": "Repository has no CI workflow for SDK package validation.",
-        "owner": "Cubeage/cubeage-platform-sdk",
-        "target": "Future CI adoption issue"
-      },
       {
         "id": "package-release-control-plane",
         "description": "Unity package metadata is versioned in source, but no bot-owned package release or registry/provenance workflow is configured.",

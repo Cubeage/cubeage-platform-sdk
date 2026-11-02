@@ -1,0 +1,11 @@
+{
+  "name": "cubeage-sdk-source-checks",
+  "private": true,
+  "scripts": {
+    "test": "python3 scripts/check-sdk.py",
+    "test:negative": "python3 scripts/check-sdk.py --negative"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  }
+}

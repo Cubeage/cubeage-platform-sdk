@@ -43,8 +43,13 @@ listed below rather than reaching into sibling repositories.
 
 ## Delivery
 
-The repository currently has no CI workflow and no registry-backed release
-workflow. Source SDK changes land on `main`; package consumers need source
-readback and game-integration smoke proof before production use. Versioned
-package/release automation is an adoption gap rather than an established
-control plane in this repository.
+[SDK validation](docs/sdk-validation.md) compiles all three source SDKs, tests
+packaged consumers, and checks local package contents on pull requests, merge
+queue groups and pushes to `main`. The shared `ci-ok` verdict requires that
+validation to succeed. Required contexts are recorded separately in the machine
+manifest; configuring a workflow alone does not enforce protection.
+
+There is no registry-backed release workflow. Local validation does not change
+package versions, tags or existing releases. Source SDK changes land on `main`;
+consumers still need host-engine or game-integration smoke proof before
+production use. Native SDK v3 releases remain outside this repository.

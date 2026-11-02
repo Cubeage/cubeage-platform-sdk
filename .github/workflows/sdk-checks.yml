@@ -1,0 +1,44 @@
+name: SDK checks
+
+on:
+  pull_request:
+  merge_group:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  sdk-checks:
+    runs-on: sylphx-linux-standard
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+      - name: Cache pinned compilers and host references
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: .sdk-tools
+          key: sdk-tools-linux-x64-${{ hashFiles('scripts/tools.json', 'scripts/bootstrap-tools.py') }}
+      - name: Install locked validation dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Compile, test and check source packages
+        run: npm run test:negative
+
+  ci-ok:
+    if: ${{ always() }}
+    needs: [sdk-checks]
+    runs-on: sylphx-linux-standard
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+      - uses: SylphxAI/.github/.github/actions/ci-ok@13e31ccd02469a480338ff86c964e8d66420cee9
+        with:
+          needs: ${{ toJSON(needs) }}
+          required: sdk-checks

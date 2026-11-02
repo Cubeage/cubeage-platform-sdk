@@ -1,0 +1,12 @@
+import SDK, { CubeageSDK, SDKConfig, AuthResponse, SessionStartResponse } from '../../Cocos/CubeageSDK';
+import config from '../../Cocos/CubeageSDKConfig';
+const options: SDKConfig = config;
+const sdk: CubeageSDK = SDK.instance;
+const initialize: Promise<void> = sdk.init(options);
+sdk.trackEvent('consumer_compile', { score: 42 });
+const user: string = sdk.userId;
+const session: string | null = sdk.sessionId;
+const ready: boolean = sdk.isInitialized;
+const auth: AuthResponse = { accessToken: '', refreshToken: '', userId: user };
+const response: SessionStartResponse = { sessionId: session ?? '' };
+void [initialize, ready, auth, response];
