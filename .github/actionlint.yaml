@@ -1,0 +1,4 @@
+self-hosted-runner:
+  labels:
+    - sylphx-linux-standard
+    - sylphx-linux-standard-merge
